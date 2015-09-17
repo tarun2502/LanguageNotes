@@ -1,3 +1,9 @@
+* http://www.goinggo.net/2015/09/composition-with-go.html
+* http://www.philipotoole.com/400-days-of-go/
+* https://www.scriptrock.com/blog/our-experience-with-golang
+* http://www.rtop-monitor.org/rtop-vis/
+* https://blog.quickmediasolutions.com/2015/09/13/non-blocking-channels-in-go.html
+* http://ericchiang.github.io/go/tests/testing/docker/2015/09/14/test-with-docker.html
 * https://medium.com/@jgautheron/quality-pipeline-for-go-projects-497e34d6567
 * https://www.reddit.com/r/golang/comments/3kqct4/best_resource_to_learn_go/
 * http://blog.ralch.com/tutorial/golang-tools-comprehension/
