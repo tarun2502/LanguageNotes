@@ -1,3 +1,5 @@
+* http://www.sanarias.com/blog/915LearningtoansweryourownquestionsinGo
+* http://coussej.github.io/2015/09/15/Listening-to-generic-JSON-notifications-from-PostgreSQL-in-Go/
 * http://www.goinggo.net/2015/09/composition-with-go.html
 * http://www.philipotoole.com/400-days-of-go/
 * https://www.scriptrock.com/blog/our-experience-with-golang

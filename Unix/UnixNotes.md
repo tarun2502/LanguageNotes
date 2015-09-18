@@ -34,9 +34,20 @@
 * /sbin/ => Contains binaries to be used only by system administrators for system administration tasks.
 * /lib/ => To support the binaries located around the system.
 * /usr/ => Binaries for user programs.
+
+# Users
+* In every unix system, user root is availbale by default. So first thing remove remote access to root user so that a hacker can not access.
+
 ### COMMANDS
 * Every command is of the form "command -option argument
 * Some commands will give you help if you do not provide arguments.
+
+### sudo
+* To run the current command as super user.
+* sudo ls -al /home/ubuntu/.ssh
+* This is recommended as if you directly go to super user mode and start running commands than you may forget that you are in super user mode and incidently run some harmful commands.
+* So it's recommmended to use sudo for running some commands as super user.
+* Not every user can run commands as super user. You have to give him special permissions to run sudo command.	
 
 #### pwd
 * It prints the current working directory.
@@ -73,7 +84,8 @@
 
 #### Regular expression
 * For arguments to ls command we can provide regular expression.
-  * ? Any singel character
+  * ? Any single character
+    * program.? matches => program.c, program.o but not program.log
   * * Any string of characters. Can match 0 character.
   * [set] Any character in set
   * [!set] Any character not in set
