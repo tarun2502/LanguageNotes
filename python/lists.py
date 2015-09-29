@@ -34,7 +34,7 @@ print list1 # ["Tarun", "Sandhya", "Atharva"]
 #Concatenation operation for list
 list1 = [0, 1]
 list2 = [3,4]
-list3 = list1 + list2
+list3 = list1 + list2 # A new list is created.
 print list3 # Lit 1 and 2 are not affected., [0, 1, 3, 4]
 
 #Length of list
@@ -115,4 +115,6 @@ def union(p, q):
             p.append(elem)
 #No need to return as it modifies the original list.
 
-
+ # Pop operation 
+ # It takes out the last element from list and modifies the list.
+ a = p.pop() # p = [1, 2], a = 3
