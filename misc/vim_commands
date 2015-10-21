@@ -1,0 +1,41 @@
+(esc) or (jj)	Enter Command Mode
+
+NAVIGATION
+h	Move one space left
+l	Move one space right
+j	Move one space down
+k	Move one space up
+gg	Move to the first line
+G	Move to the last line
+:7 or 7G	Move to the 7 line(etc)
+/text	Go to occurence of that text after cursor
+n	Will repeat last search
+w	will go to next word
+e	will go to end of this word
+0	Go to beginning of line.
+$	Go to end of line
+
+EDITING
+x	Delete characte at cursor
+o	Open new line below cursor
+O	Open new line above cursor
+dd	Delete line
+dw	Delete word
+cw	Change word
+dt	Delete till a character
+ct	Change till a character
+i	Insert
+I 	Insert at start of line
+a	Append
+A	Append at end of line
+p	Paste After Cursor
+P	Paste Before Cursor
+.	Repeat last command
+:%s/tarun/sharma/g	Substitue(s) every line(%s) tarun with sharma globally(g) meaning if comes twice on a line then do that also.
+
+SAVING AND QUITTING
+:w	Save file
+:w abc	Save file as abc
+:q	Quit
+:wq or ZZ	Save and quit
+:q!		Quit witout save

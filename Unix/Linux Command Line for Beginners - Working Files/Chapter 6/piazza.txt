@@ -1,0 +1,7 @@
+grep: stuff: Is a directory
+MLB40.csv:Johnny Bench,45,1970,Cincinnati Reds,NL
+MLB40.csv:Ben Oglivie,41,1980,Milwaukee Brewers,AL
+MLB40.csv:Johnny Bench,40,1972,Cincinnati Reds,NL
+players.txt:   1 Ben Oglivie
+players.txt:   2 Johnny Bench
+players.txt:   1 Ben Oglivie

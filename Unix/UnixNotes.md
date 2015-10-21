@@ -250,9 +250,10 @@
 
 ### cal 
 * Calendar.
+* `Syntax cal [[month] year]`
 * `cal` => To display current month calender.
 * `cal 7 2006` => To display for July 2006
-
+* `cal 2005` => To display calendar of year 2005
 ### less
 * file viewer, shows start of file and then stops.
 * j, k => Normal down and up
@@ -288,8 +289,90 @@
 * To clear screen.
 * `tput clear`
 
+### cut
+* To cut the output vertically column wise.
+* `cut -d, -f1` => To get the field1 of input which is delimited by ,
+
+### uniq
+* As the name says to supress the duplicate output.
+* `uniq -c` => To also show the number of times a field appears.
+
+### sort
+* To sort the incoming input.
+* By default the sort is ascending order and on ascii basis i.e. Upper case before lower case.
+* `sort -nr` => To sort assuming first column is number(-n) and sort in descending order(-r).
+
+### grep
+* To print the lines if found some character.
+* `grep "ABC" file` => grep for ABC in file
+* `grep -v "ABC" file` => Print all those lines which does not contain ABC.
+* grep -v Yankees MLB
+
+### date
+* Displaying the sytem date
+* The system actually stores seconds elapsed since the Epoch i.e. January 1, 1970
+* `date` => Displays the current date and time to the nearest  seconds including time zone.
+* `date +%m` => 10 , gives only the month in numeric form.
+* `date +%h` => Oct, gives only the month in english form.
+* `date +"%h %m"` => Oct 10, here we combine them, note that quote is necessary when combining them.
+* Other specifiers are d => day of month, y => Last two digits of year, H. M and S => Hour, minute and second respectively, D => The date in mm/dd/yy format, T => The time in the format hh:mm:ss.
+
+### output redirection
+* `grep AL MLB40.csv| grep -v Name| cut -d, -f1|sort|uniq -c | sort -nr > players.txt` => Here the output will go to file players.txt and it will override if anything already exists.
+* `>>` => Append to the file.
+* By default standard input = 0, standard output = 1, standard error = 2
+* So if we do `grep Ben *` in Chapter 6 directory then it will produce the output and also an error that "Stuff is a directory" as standard error is also pointed to shell only by default.
+* If we do `grep Beb *>piaza.txt 2>piazza.err` we are redirecting standard output to piazza.txt and standard err to piazza.err.
+* `grep Ben * 2>piazza.err` means to present the output and redirect the error to piazza.err
+* `grep Ben * 2>/dev/null` => It will write the output to screen and send the error to /dev/null which gets thrown away automatically as `cat /dev/null` is always empty.
+* `grep Ben * > piazza.txt 2>&1` => It will send the output and input to both piazza.txt.
+* `grep Ben < MLB40.csv` => It means to read the input from file MLB40.csv. It's equivalent to `cat MLB40.csv|grep Ben`
+
+### Shell Wildcards
+* `*` is to expand everything.`ls -d *`will print all the directories in the current folder.
+* `ls -d De*`=> To select only the directory starting with De.
+* `?` => searches for only one chareacter.
+
+### echo
+* Like the print command for unix
+* Also used with escape sequences.
+  * echo `"Enter filename:\c"` => `Enter filename: $_` => \c is a directive to plavce the cursor and prompt in the same line that displays the output.
+  * \t => To tab which pushes the text to right by eight chracter position.
+  * \n => newline which creates the effect of pressing Enter key.
+  * We can also use octal (base 8) . Echo interprets a number as octal when its preceded by \0. For e.g ctrl + g => sounding of a beep => octal value of 7 => so `echo "\07"` will produce a sound. 
+  * Linux intreprets these escape sequence only if used with -e option. So in linux we should use `echo -e "Enter your name: \c"`
+
+### printf
+* Like the echo command. Built in bash. For other shells an external command.
+* By default does not print linefeed when printing. You have to add \n.
+* Supports formatted strings like c. `printf "My current shell is %s\n" $SHELL` => My current shell is /bin/bash.
+* Other formats are `%30s => string printed 30 characte wide`, %d => decimal integer, %6d => decimal character printed 6 space wide, %o => Octal Integer, %x => hexadecimal integer, %f => Floating point number.
+* `printf "The value of 255 is %o in octal and %x in hexadecimal\n" 255 255`=> The value of 255 is 377 in octal and ff in hexadecimal.
+
+### Customization
+
+#### Customizing Alias
+* `alias` => gives you the current alias set up.
+* Alias => To run a custom version of a command.
+* Its basically the start of the command to first white space. `echo ls` => will not evoke alias.
+* e.g `alias ..='cd ..'` => Typing .. will evoke cd ..
+* To remove alias do `unalias ..`
+* We can even nest an alias into an alias.
+
+#### Customizing Path.
+* Environment variables => They set the environment for the shell. Use `env` to get it.
+* In the environment variables there is a variable named PATH which tells bash look into these directoris to find the command to run. `echo $PATH`
+* To update the Path use `PATH="$PATH:/home/tarun/bin"`
+* Singel quotes means whatever in between is a literal string. Whreas Double quote means to intrepet the $ variable.
+
+#### Customizing your Prompt
+* `echo $PS1` => To know your current promptsetting.
+* `\u = username, \h = hostname, \w = working directory`
+* To know the more details do `man bash` and search for prompt
 ### LinksToRead
 * http://askubuntu.com/questions/60218/how-to-add-a-directory-to-my-path
 * http://sheet.shiar.nl/less
 * http://codular.com/regex
+* http://www.commandlinefu.com/commands/browse/sort-by-votes
+* http://www.bashoneliners.com/
 

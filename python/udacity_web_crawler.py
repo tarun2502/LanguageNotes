@@ -120,7 +120,7 @@ def test():
     add_page_to_index(index, 'not.test', "This is not a test")
     print index
 
-index = make_big_index(1000000)
+index = make_big_index(10)
 
 #test()
 def test2():
